@@ -1,0 +1,20 @@
+# ignore all the standard files and directories
+**/node_modules
+**/.idea
+.env
+.DS_Store
+.vscode
+**/.venv
+__pycache__
+**/.aws-sam
+**/events
+template.yaml
+build
+dist
+package-lock.json
+packaged.yaml
+samconfig.toml
+**/pypdf
+**/pypdf-4.2.0.dist-info
+shared.py
+env.json
