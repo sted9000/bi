@@ -3,8 +3,6 @@
 ## Description
 An automated workflow that converts a small business's daily service provider reports (sales, payroll, service times) into a simple business intelligence dashboard.
 
-![Demo](assets/demo.gif)
-
 ## General
 ### Problem
 Many small and medium-sized businesses use a collection of third-party services to handle various aspects of their operations. These services often provide daily reports that are useful for monitoring business health. However, these reports are typically in a format that is not easily consumable, forcing business owners to sift through multiple pages to extract relevant information.
@@ -12,7 +10,10 @@ Many small and medium-sized businesses use a collection of third-party services 
 ### Solution
 Automate the process of extracting relevant information from these reports and host a simple business intelligence dashboard that the business owner can access to see the relevant information at a glance.
 
+![Demo](assets/demo.gif)
+
 ## Workflow
+![Workflow](assets/workflow.png)
 1. **Capture third-party provider's daily reports sent via email**
    - Watch for emails from third-party providers (Zapier/ActivePieces)
    - Store the reports in AWS S3 (ActivePieces)
