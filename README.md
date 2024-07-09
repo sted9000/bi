@@ -14,16 +14,26 @@ Automate the process of extracting relevant information from these reports and h
 
 ## Workflow
 ![Workflow](assets/workflow.png)
-1. **Capture third-party provider's daily reports sent via email**
-   - Watch for emails from third-party providers (Zapier/ActivePieces)
-   - Store the reports in AWS S3 (ActivePieces)
+1. **Client Inbox (Zapier)**
+   - Watch for emails from third-party providers
+   - Extract the attachments and send to dedicated email addresses
 
-2. **Parse the reports to extract relevant information**
-   - Parse the reports stored in S3 (AWS Lambda)
-   - Store the extracted information in Supabase DB (AWS Lambda, Supabase)
+2. **Automation Inbox (ActivePieces)**
+   - ActivePieces server hosted locally on a Raspberry Pi with Docker Compose
+   - Watch for emails from the client inbox
+   - Upload the attachments to AWS S3
 
-3. **Host a simple business intelligence dashboard**
-   - Web app queries the database and displays information (Vue3, Supabase, Vercel)
+4. **Lambdas**
+   - Schedule to run daily
+   - Parse the reports and extract relevant information
+   - Store the reports in Supabase for easy UI access
+
+5. **Dashboard (Vue3)**
+   - Basic Auth with Supabase
+   - Display the relevant information in a simple, easy-to-read format
+   - Hosted on Vercel
+
+Note: Step 1 and 2 should ideally be combined into one service, but Zapier was necessary for handling emails with multiple attachments.
 
 ## Stack
 - Zapier
